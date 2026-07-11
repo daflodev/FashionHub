@@ -3,7 +3,6 @@ import { CreditCard } from "lucide-react"
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-
 // 1. Definimos las Props
 interface StripePaymentProps {
   total: number;
@@ -12,6 +11,8 @@ interface StripePaymentProps {
 
 // 2. Se las asignamos al componente
 export function StripePayment({ total, onPaymentSuccess }: StripePaymentProps) {
+
+
   const stripe = useStripe()
   const elements = useElements()
   const [isProcessing, setIsProcessing] = useState(false)
